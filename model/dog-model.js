@@ -2,16 +2,17 @@
 const pool = require('.././config/dog-config');
 
 const getDogs = () => {
-    return new Promise(function(resolve, reject){
-        pool.query('SELECT * FROM dogs ORDER BY id ASC', (error, result) => {
+    return new Promise((resolve, reject) => {
+        pool.query('SELECT * FROM dogs ORDER BY id ASC', (error, results) => {
           if (error) {
-            reject(error)
-          }  
-          resolve(resolve.rows);
-        });
+            reject(error);
+          } else {
+          resolve(results.rows);
+        }
     });
+ });
 };
 
 module.exports = {
     getDogs,
-}
+};
