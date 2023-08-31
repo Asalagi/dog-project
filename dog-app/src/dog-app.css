@@ -1,0 +1,22 @@
+body {
+    background-color: white;
+    margin: 0px;
+}
+
+.container {
+    display: flex;
+    background-color: #F6F1F1;
+    height: 100vh;
+}
+
+.link-content {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    width: 200px;
+    text-align: center;
+}
+
+/* blue light: 19A7CE
+blue dark: 146C94
+*/
