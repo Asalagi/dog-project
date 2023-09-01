@@ -16,15 +16,33 @@ function Register() {
             <div className="main-content">
             <form>
             <div class="form-content">
-            <h1>Register your dog!</h1><br/>
             <div class="form-column">
-             <div class="form-cell">Name</div>
+             <div class="form-cell"><p className="form-text">Name</p></div>
              <div class="form-cell">
                 <input type="text" name="name"></input></div>
             </div>
             <div class="form-column">
-             <div class="form-cell">Data 1</div>
-             <div class="form-cell">Data 2</div>
+             <div class="form-cell"><p className="form-text">Breed</p></div>
+             <div class="form-cell">
+                <input type="text" name="breed"></input></div>
+            </div>
+            <div class="form-column">
+             <div class="form-cell"><p className="form-text">Color</p></div>
+             <div class="form-cell">
+                <input type="text" name="color"></input></div>
+            </div>
+            <div class="form-column">
+             <div class="form-cell"><p className="form-text">Sex</p></div>
+             <div class="form-cell">
+                <select name="sex">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select></div>
+            </div>
+            <div class="form-column">
+             <div class="form-cell"><p className="form-text">Birthday</p></div>
+             <div class="form-cell">
+                <input type="text" name="birthday" placeholder="YYYY/MM/DD"></input></div>
             </div>
             </div>
             </form>
