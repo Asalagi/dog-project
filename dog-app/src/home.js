@@ -5,7 +5,7 @@ import './dog-app.css';
 
 function Home() {
     return (
-        <div>
+        <div className="flex-container">
             <div className="header-content">
                 <h3 className="head-bold">Register in the month of September and receive a special gift!</h3></div>
             <div className="link-content">
