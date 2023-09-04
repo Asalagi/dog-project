@@ -57,7 +57,9 @@ html, body {
     width: 95%;
     border: 0px solid black;
 }
-
+.reg-label {
+    font-weight: bold;
+}
 .form-content {
     display: flex;
     flex-direction: column;

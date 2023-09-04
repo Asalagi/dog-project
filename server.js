@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dog = require('./model/dog-model');
+const { response } = require('express');
 const app = express();
 const port = 3001;
 
@@ -23,6 +24,23 @@ app.get('/dogs', async (req, res) => {
     } catch (error) {
         res.status(500).send(error);
     }
+});
+
+app.post('/register', async (req, res) => {
+    try {
+        const response = await dog.createDogs(req.body)
+        res.status(200).json({
+            success: true,
+            message: 'Registration successful',
+            member: response,
+        });
+    } catch (error) {
+        res.status(500).json({
+            sucess: false,
+            message: 'Registration failed',
+            error: error.message,
+        });
+    };
 });
 
 app.listen(port, () =>{

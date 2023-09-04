@@ -5,49 +5,31 @@ import dog from './dogdog.png';
 
 function Register() {
     return (
-        <div className="container">
-            <div className="link-content">
-                <img src={dog} alt="dog" /><br/>
-                <h2>DogDog Registry</h2><br/>
-                    <Link to="/home">Home</Link><br/>
-                    <Link to="/register">Register</Link><br/>
-                    Registered<br/>
-            </div>
-            <div className="main-content">
-            <form>
-            <div class="form-content">
-            <div class="form-column">
-             <div class="form-cell"><p className="form-text">Name</p></div>
-             <div class="form-cell">
-                <input type="text" name="name"></input></div>
-            </div>
-            <div class="form-column">
-             <div class="form-cell"><p className="form-text">Breed</p></div>
-             <div class="form-cell">
-                <input type="text" name="breed"></input></div>
-            </div>
-            <div class="form-column">
-             <div class="form-cell"><p className="form-text">Color</p></div>
-             <div class="form-cell">
-                <input type="text" name="color"></input></div>
-            </div>
-            <div class="form-column">
-             <div class="form-cell"><p className="form-text">Sex</p></div>
-             <div class="form-cell">
-                <select name="sex">
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select></div>
-            </div>
-            <div class="form-column">
-             <div class="form-cell"><p className="form-text">Birthday</p></div>
-             <div class="form-cell">
-                <input type="text" name="birthday" placeholder="YYYY/MM/DD"></input></div>
-            </div>
-            </div>
-            </form>
-             </div>
-            </div>
+        <div className="flex-container">
+        <div className="header-content">
+            <h3 className="head-bold">Register in the month of September and receive a special gift!</h3></div>
+        <div className="link-content">
+            <img src={dog} alt="dog" />
+            <h2>DogDog Registry</h2><br/>
+                <Link to="/home">Home</Link><br/>
+                <Link to="/register">Register</Link><br/>
+                Registered<br/>
+        </div>
+        <div className="main-content">
+          <div className="inner-content"> 
+        <h1 className="center">Register Your Dog!</h1>
+          <form>
+            <lable className="reg-label">Name </lable><input type="text" name="name" required /><br />
+            <lable className="reg-label">Breed </lable><input type="text" name="breed" required /><br />
+            <lable className="reg-label">Color </lable><input type="text" name="color" required /><br />
+            <lable className="reg-label">Sex </lable><input type="text" name="sex" required /><br />
+            <lable className="reg-label">Birthday </lable><input type="text" name="birthday" placeholder="YYYY/MM/DD" required /><br />
+            <button type="submit">Register</button>
+          </form>
+        </div>
+        </div> 
+        <footer>Here is a happy little footer</footer>
+    </div>
     );
 }
 
