@@ -66,7 +66,7 @@ html, body {
     background-color: aqua;
     width: 30%;
     margin: 0 auto;
-    border-radius: 4px;
+    border-radius: 5px;
     border: 1px solid black;
 }
 
@@ -107,12 +107,20 @@ html, body {
 input {
     width: 200px;
     height: 25px;
+    border-radius: 4px;
     border: 1px solid black;
 }
 
 select {
-    width: 256px;
+    width: 50px;
+    height: 29px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+.year-input {
+    width: 100px;
     height: 25px;
+    border-radius: 4px;
     border: 1px solid black;
 }
 
@@ -124,6 +132,7 @@ footer {
     background-color: aqua;
     padding: 10px;
     margin-top: auto;
+    text-align: center;
 }
 
 /* blue light: 19A7CE
