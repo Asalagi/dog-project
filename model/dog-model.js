@@ -13,7 +13,7 @@ const getDogs = () => {
  });
 };
 
-const createDogs = () => {
+const createDogs = (body) => {
   const { name, breed, color, sex, birthday } = body;
   console.log('A new dog has been entered into the database:', body);
 
