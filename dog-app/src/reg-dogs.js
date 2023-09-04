@@ -3,7 +3,7 @@ import dog from './dogdog.png';
 import { Link } from 'react-router-dom';
 import './dog-app.css';
 
-function Success() {
+function RegisteredDogs() {
     return (
         <div className="flex-container">
             <div className="header-content">
@@ -17,8 +17,7 @@ function Success() {
             </div>
             <div className="main-content">
               <div className="inner-content"> 
-            <h1 className="center">Success!</h1>
-                <p>You're dog was successfully registered!</p>         
+            <h1 className="center">Registered Dogs!</h1>       
             </div>
             </div> 
             <footer>Here is a happy little footer</footer>
@@ -26,4 +25,4 @@ function Success() {
     );
 }
 
-export default Success;
+export default RegisteredDogs;

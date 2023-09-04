@@ -11,9 +11,9 @@ function Home() {
             <div className="link-content">
                 <img src={dog} alt="dog" />
                 <h2>DogDog Registry</h2><br/>
-                    <Link to="/home">Home</Link><br/>
-                    <Link to="/register">Register</Link><br/>
-                    Registered<br/>
+                <Link className="main-links" to="/home">Home</Link>
+                <Link className="main-links" to="/register">Register</Link> 
+                Registered<br/>
             </div>
             <div className="main-content">
               <div className="inner-content"> 

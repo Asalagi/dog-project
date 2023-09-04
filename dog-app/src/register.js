@@ -44,9 +44,9 @@ function Register() {
         <div className="link-content">
             <img src={dog} alt="dog" />
             <h2>DogDog Registry</h2><br/>
-                <Link to="/home">Home</Link><br/>
-                <Link to="/register">Register</Link><br/>
-                Registered<br/>
+                <Link className="main-links" to="/home">Home</Link>
+                <Link className="main-links" to="/register">Register</Link> 
+                <Link className="main-links" to="/reg-dogs">Registered</Link>
         </div>
         <div className="main-content">
           <div className="inner-content"> 
@@ -54,23 +54,23 @@ function Register() {
         <div className="form-content">
           <form onSubmit={handleCreate}>
             <div className="form-row">
-              <div className="form-label"><label className="reg-label">Name </label></div>
+              <div className="form-label"><label>Name </label></div>
               <div className="form-item"><input type="text" name="name" required onChange={e => setName(e.target.value)}/></div>
             </div>
             <div className="form-row">
-              <div className="form-label"><label className="reg-label">Breed </label></div>
+              <div className="form-label"><label>Breed </label></div>
               <div className="form-item"><input type="text" name="breed" required onChange={e => setBreed(e.target.value)}/></div>
             </div>
             <div className="form-row">
-              <div className="form-label"><label className="reg-label">Color </label></div>
+              <div className="form-label"><label>Color </label></div>
               <div className="form-item"><input type="text" name="color" required onChange={e => setColor(e.target.value)}/></div>
             </div>
             <div className="form-row">
-              <div className="form-label"><label className="reg-label">Sex </label></div>
+              <div className="form-label"><label>Sex </label></div>
               <div className="form-item"><input type="text" name="sex" required onChange={e => setSex(e.target.value)}/></div>
             </div>
             <div className="form-row">
-              <div className="form-label"><label className="reg-label">Birthday </label></div>
+              <div className="form-label"><label>Birthday </label></div>
               <div className="form-item">
                 <input className="year-input" type="text" name="year" placeholder="YYYY" required onChange={e => setYear(e.target.value)}/>
                 <select name="month" required onChange={e => setMonth(e.target.value)}>
@@ -123,7 +123,7 @@ function Register() {
                 </div>
             </div>
             <div className="form-row">
-              <div className="form-submit"><button type="submit">Register</button></div>
+              <div className="form-submit"><button className="reg-btn" type="submit">Register</button></div>
             </div>
           </form>
         </div>
