@@ -18,7 +18,7 @@ function Success() {
             <div className="main-content">
               <div className="inner-content"> 
             <h1 className="center">Success!</h1>
-                <p>Youre dog was successfully registered!</p>         
+                <p>You're dog was successfully registered!</p>         
             </div>
             </div> 
             <footer>Here is a happy little footer</footer>

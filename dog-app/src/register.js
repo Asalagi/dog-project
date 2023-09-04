@@ -33,6 +33,7 @@ function Register() {
         <div className="main-content">
           <div className="inner-content"> 
         <h1 className="center">Register Your Dog!</h1>
+        <div className="form-content">
           <form onSubmit={e => {
             e.preventDefault();
             handleCreate({
@@ -43,15 +44,33 @@ function Register() {
                 brithday: e.target.elements.birthday.value,
             });
           }}>
-            <label className="reg-label">Name </label><input type="text" name="name" required /><br />
-            <label className="reg-label">Breed </label><input type="text" name="breed" required /><br />
-            <label className="reg-label">Color </label><input type="text" name="color" required /><br />
-            <label className="reg-label">Sex </label><input type="text" name="sex" required /><br />
-            <label className="reg-label">Birthday </label><input type="text" name="birthday" placeholder="YYYY/MM/DD" required /><br />
-            <button type="submit">Register</button>
+            <div className="form-row">
+              <div className="form-label"><label className="reg-label">Name </label></div>
+              <div className="form-item"><input type="text" name="name" required /></div>
+            </div>
+            <div className="form-row">
+              <div className="form-label"><label className="reg-label">Breed </label></div>
+              <div className="form-item"><input type="text" name="breed" required /></div>
+            </div>
+            <div className="form-row">
+              <div className="form-label"><label className="reg-label">Color </label></div>
+              <div className="form-item"><input type="text" name="color" required /></div>
+            </div>
+            <div className="form-row">
+              <div className="form-label"><label className="reg-label">Sex </label></div>
+              <div className="form-item"><input type="text" name="sex" required /></div>
+            </div>
+            <div className="form-row">
+              <div className="form-label"><label className="reg-label">Birthday </label></div>
+              <div className="form-item"><input type="text" name="birthday" placeholder="YYYY/MM/DD" required /></div>
+            </div>
+            <div className="form-row">
+              <div className="form-submit"><button type="submit">Register</button></div>
+            </div>
           </form>
         </div>
         </div> 
+        </div>
         <footer>Here is a happy little footer</footer>
     </div>
     );

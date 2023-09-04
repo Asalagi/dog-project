@@ -62,26 +62,50 @@ html, body {
 }
 .form-content {
     display: flex;
-    flex-direction: column;
-    border: 0px solid black;
-}
-
-.form-column {
-    flex-direction: space-between;
-    padding: 0px;
+    flex-flow: column nowrap;
+    background-color: aqua;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 4px;
     border: 1px solid black;
 }
 
-.form-cell {
-    width: max-content;
-    border: 1px solid black;
-    padding: 5px;
-    align-items: center;
+.form-row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    border-bottom: 0px solid black;
+}
+
+.form-item {
+    display: flex;
+    flex: 2;
+    font-size: 16px;
+    padding: 8px 0;
     justify-content: center;
+    align-items: center;
+}
+
+.form-label {
+    display: flex;
+    flex: 1;
+    font-size: 16px;
+    padding: 8px 0;
+    justify-content: right;
+    align-items: center;
+}
+
+.form-submit {
+    display: flex;
+    flex: 3;
+    font-size: 16px;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
-    width: 250px;
+    width: 200px;
     height: 25px;
     border: 1px solid black;
 }
