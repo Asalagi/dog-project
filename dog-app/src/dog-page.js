@@ -8,10 +8,10 @@ function DogInfo() {
     const { id } = useParams();
     const [dog, setDog] = useState({});
     
-    const [name, setName] = useState(dog.name);
-    const [breed, setBreed] = useState(dog.breed);
-    const [color, setColor] = useState(dog.color);
-    const [sex, setSex] = useState(dog.sex);
+    const [name, setName] = useState('');
+    const [breed, setBreed] = useState('');
+    const [color, setColor] = useState('');
+    const [sex, setSex] = useState('');
     const [year, setYear] = useState('');
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
