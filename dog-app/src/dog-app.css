@@ -156,7 +156,7 @@ select {
 .reg-container {
     display: flex;
     flex-flow: column nowrap;
-    background-color: red;
+    background-color: #F6F1F1;
     width: 80%;
     margin: 0 auto;
     border-radius: 5px;
@@ -167,7 +167,6 @@ select {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    border-bottom: 0px solid black;
 }
 
 .reg-category {
@@ -181,17 +180,19 @@ select {
 .reg-category:first-child {
     border-top-left-radius: 5px;
 }
+
 .reg-category:last-child {
     border-top-right-radius: 5px;
 }
 
 .reg-item {
     display: flex;
-    background-color: #F6F1F1;
     flex: 1;
     padding: 5px;
     justify-content: left;
     align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 footer {
