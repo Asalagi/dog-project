@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dog = require('./model/dog-model');
-const { response } = require('express');
 const app = express();
 const port = 3001;
 
@@ -41,6 +40,21 @@ app.post('/register', async (req, res) => {
             error: error.message,
         });
     };
+});
+
+app.get('/dogs/:id', async (req, res) => {
+    try {
+        const dogId = req.params.id;
+        const response = await dog.getDogById(dogId);
+
+        if(response) {
+            res.status(200).send(response);
+        } else {
+            res.status(404).send('Dog not found');
+        }
+    } catch (error) {
+        res.status(500).send(error)
+    }
 });
 
 app.listen(port, () =>{

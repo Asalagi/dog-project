@@ -13,6 +13,18 @@ const getDogs = () => {
  });
 };
 
+const getDogById = (id) => {
+  return new Promise((resolve, reject) => {
+    pool.query('SELECT * FROM dogs WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results.rows[0]);
+      }
+    });
+  });
+};
+
 const createDogs = (body) => {
   const { name, breed, color, sex, birthday } = body;
   console.log('A new dog has been entered into the database:', body);
@@ -31,5 +43,6 @@ const createDogs = (body) => {
 
 module.exports = {
     getDogs,
+    getDogById,
     createDogs,
 };

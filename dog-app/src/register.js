@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './dog-app.css';
-import dog from './dogdog.png';
+import dogImage from './dogdog.png';
 
 function Register() {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ function Register() {
         <div className="header-content">
             <h3 className="head-bold">Register in the month of September and receive a special gift!</h3></div>
         <div className="link-content">
-            <img src={dog} alt="dog" />
+            <img src={dogImage} alt="dog" />
             <h2>DogDog Registry</h2><br/>
                 <Link className="main-links" to="/home">Home</Link>
                 <Link className="main-links" to="/register">Register</Link> 

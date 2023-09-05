@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import dog from './dogdog.png';
+import dogImage from './dogdog.png';
 import { Link } from 'react-router-dom';
 import './dog-app.css';
 import axios from 'axios';
@@ -28,7 +28,7 @@ function RegisteredDogs() {
             <div className="header-content">
                 <h3 className="head-bold">Register in the month of September and receive a special gift!</h3></div>
             <div className="link-content">
-                <img src={dog} alt="dog" />
+                <img src={dogImage} alt="dog" />
                 <h2>DogDog Registry</h2><br/>
                 <Link className="main-links" to="/home">Home</Link>
                 <Link className="main-links" to="/register">Register</Link> 
@@ -51,7 +51,7 @@ function RegisteredDogs() {
                     <div className="reg-item">{dogs.breed}</div>
                     <div className="reg-item">{dogs.color}</div>
                     <div className="reg-item">{dogs.sex}</div>
-                    <div className="reg-item">view page</div>
+                    <div className="reg-item"><Link className="reg-btn center" to={`/dogs/${dogs.id}`}>View Page</Link></div>
                 </div>
                 ))}
             </div>     

@@ -3,6 +3,7 @@ import Home from './home';
 import Register from './register';
 import Success from './reg-success';
 import RegisteredDogs from './reg-dogs';
+import DogInfo from './dog-page';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/register' element={<Register/>} />
         <Route path='/reg-success' element={<Success/>} />
         <Route path='/reg-dogs' element={<RegisteredDogs/>} />
+        <Route path='/dogs/:id' element={<DogInfo/>} />
       </Routes>
     </Router>
   );
