@@ -35,7 +35,7 @@ app.post('/register', async (req, res) => {
         });
     } catch (error) {
         res.status(500).json({
-            sucess: false,
+            success: false,
             message: 'Registration failed',
             error: error.message,
         });
@@ -54,6 +54,39 @@ app.get('/dogs/:id', async (req, res) => {
         }
     } catch (error) {
         res.status(500).send(error)
+    }
+});
+
+app.put('/dogs/:id', async (req, res) => {
+    try {
+        const dogId = req.params.id;
+        const existingDog = await dog.getDogById(dogId);
+
+        if(!existingDog) {
+            return res.status(404).send('Dog not found');
+        }
+
+        const updatedDog = {
+            name: req.body.name || existingDog.name,
+            breed: req.body.breed || existingDog.breed,
+            color: req.body.color || existingDog.color,
+            sex: req.body.sex || existingDog.sex,
+            birthday: req.body.birthday || existingDog.birthday,
+        };
+
+        const response = await dog.updateDogs(dogId, updatedDog);
+
+        res.status(200).json({
+            success: true,
+            message: 'Dog has been updated',
+            updatedDog: response,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Update failed',
+            error: error.message,
+        });
     }
 });
 

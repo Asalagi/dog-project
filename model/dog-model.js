@@ -41,8 +41,26 @@ const createDogs = (body) => {
   });
 };
 
+const updateDogs = (id, updateDogInfo) => {
+  const { name, breed, color, sex, birthday } = updateDogInfo;
+
+  return new Promise((resolve, reject) => {
+    pool.query ('UPDATE dogs SET name = $1, breed = $2, color = $3, sex = $4, birthday = $5 WHERE id = $6 RETURNING *',
+    [name, breed, color, sex, birthday, id],
+    (error, results) => {
+      if (error) {
+        console.error(error.message);
+        reject(error);
+      } else {
+        resolve(results.rows[0]);
+      }
+    });
+  });
+};
+
 module.exports = {
     getDogs,
     getDogById,
     createDogs,
+    updateDogs,
 };
