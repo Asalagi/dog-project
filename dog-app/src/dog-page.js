@@ -38,10 +38,30 @@ function DogInfo() {
         });
     }
 
+    const handleDelete = () => {
+        axios.delete(`http://localhost:3001/dogs/${id}`)
+        .then(response => {
+            console.log('Dog has succesfully been deleted', response.data);
+        })
+        .catch(error => {
+            console.log('An error has occurred when trying to delete this dog', error);
+        });
+    }
+
     useEffect(() => {
         axios.get(`http://localhost:3001/dogs/${id}`)
         .then(response => {
-            setDog (response.data);
+            const dogData = response.data;
+            setDog(dogData);
+            setName(dogData.name);
+            setBreed(dogData.breed);
+            setColor(dogData.color);
+            setSex(dogData.sex);
+
+            const [year, month, day] = dogData.birthday.split("-");
+            setYear(year);
+            setMonth(month);
+            setDay(day);
         })
         .catch(error => {
             console.error('oh no your dog got out and we can retrieve it', error);
@@ -52,6 +72,8 @@ function DogInfo() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
+
+
 
     return (
         <div className="flex-container">
@@ -144,6 +166,9 @@ function DogInfo() {
             </div>
           </form>
         </div>      
+            </div>
+            <div className="delete-container"> 
+                <button className="delete-btn" onClick={handleDelete}>Delete</button>
             </div>
             </div> 
             <footer>Here is a happy little footer</footer>

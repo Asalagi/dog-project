@@ -90,6 +90,32 @@ app.put('/dogs/:id', async (req, res) => {
     }
 });
 
+app.delete('/dogs/:id', async (req, res) => {
+    try {
+        const dogId = req.params.id;
+        const deletedDogs = await dog.deleteDogs(dogId);
+
+        if(deletedDogs) {
+            res.status(200).json({
+                success: true,
+                message: 'Dog has successfully been deleted',
+                deletedDogs,
+            });
+        } else {
+            res.status(404).json({
+                success: false,
+                message: 'Dog not deleted',
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'An error has happened when trying to delete this dog',
+            error: error.message,
+        });
+    }
+});
+
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}`)
 });

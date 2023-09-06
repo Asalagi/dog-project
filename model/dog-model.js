@@ -58,9 +58,26 @@ const updateDogs = (id, updateDogInfo) => {
   });
 };
 
+const deleteDogs = (id) => {
+  return new Promise((resolve, reject) => {
+    pool.query('DELETE FROM dogs WHERE id = $1 RETURNING *', [id], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if(results.rowCount === 0) {
+          resolve(null);
+        } else {
+          resolve(results.rows[0]);
+        }
+      }
+    });
+  });
+};
+
 module.exports = {
     getDogs,
     getDogById,
     createDogs,
     updateDogs,
+    deleteDogs,
 };
