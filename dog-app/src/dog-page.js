@@ -168,12 +168,12 @@ function DogInfo() {
               <div className="form-submit"><button className="reg-btn" type="submit">Update</button></div>
             </div>
           </form>
-        </div>      
-            </div>
-            <div className="delete-container"> 
+           </div>   
+           <div className="delete-container"> 
                 <button className="delete-btn" onClick={handleDelete}>Delete</button>
+             </div>   
             </div>
-            </div> 
+             </div> 
             <footer>Here is a happy little footer</footer>
         </div>
     );
