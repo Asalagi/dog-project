@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import dogImage from './dogdog.png';
-import { Link, useParams} from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './dog-app.css';
 import axios from 'axios';
 
 function DogInfo() {
     const { id } = useParams();
+    const navigate = useNavigate();
+
     const [dog, setDog] = useState({});
     
     const [name, setName] = useState('');
@@ -42,6 +44,7 @@ function DogInfo() {
         axios.delete(`http://localhost:3001/dogs/${id}`)
         .then(response => {
             console.log('Dog has succesfully been deleted', response.data);
+            navigate('/delete-success')
         })
         .catch(error => {
             console.log('An error has occurred when trying to delete this dog', error);
