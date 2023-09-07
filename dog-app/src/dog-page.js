@@ -54,7 +54,17 @@ function DogInfo() {
     useEffect(() => {
         axios.get(`http://localhost:3001/dogs/${id}`)
         .then(response => {
-            setDog(response.data);
+            const dogData = response.data;
+            setDog(dogData);
+            setName(dogData.name);
+            setBreed(dogData.breed);
+            setColor(dogData.color);
+            setSex(dogData.sex);
+
+            const [year, month, day] = dogData.birthday.split("-");
+            setYear(year);
+            setMonth(month);
+            setDay(day);
         })
         .catch(error => {
             console.error('oh no your dog got out and we can retrieve it', error);
@@ -65,9 +75,7 @@ function DogInfo() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
-
-
-
+    
     return (
         <div className="flex-container">
             <div className="header-content">
@@ -157,7 +165,7 @@ function DogInfo() {
                 </div>
             </div>
             <div className="form-row">
-              <div className="form-submit"><button className="reg-btn" type="submit">Update</button></div>
+              <div className="form-submit"><button className="reg-btn">Update</button></div>
             </div>
           </form>
            </div>   

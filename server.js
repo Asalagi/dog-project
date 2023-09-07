@@ -66,29 +66,42 @@ app.put('/dogs/:id', async (req, res) => {
             return res.status(404).send('Dog not found');
         }
 
-        const updatedDog = {
-            name: req.body.name || existingDog.name,
-            breed: req.body.breed || existingDog.breed,
-            color: req.body.color || existingDog.color,
-            sex: req.body.sex || existingDog.sex,
-            birthday: req.body.birthday || existingDog.birthday,
-        };
+            const updatedDog = {
+                name: req.body.name !== undefined ? req.body.name : existingDog.name,
+                breed: req.body.breed !== undefined ? req.body.breed : existingDog.breed,
+                color: req.body.color !== undefined ? req.body.color : existingDog.color,
+                sex: req.body.sex !== undefined ? req.body.sex : existingDog.sex,
+                birthday: req.body.birthday !== undefined ? req.body.birthday : existingDog.birthday,
+              };
 
         const response = await dog.updateDogs(dogId, updatedDog);
 
-        res.status(200).json({
-            success: true,
-            message: 'Dog has been updated',
-            updatedDog: response,
-        });
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: 'Update failed',
-            error: error.message,
-        });
+        if(response) {
+            res.status(200).send(response);
+        } else {
+            res.status(400).send('Dog not found');
+        } 
+    } catch(error) {
+        res.status(500).send(error)
     }
 });
+
+// app.put('/dogs/:id', async (req, res) => {
+//     try {
+//       const dogId = req.params.id;
+//       const updatedDog = req.body;
+  
+//       const response = await dog.updateDogs(dogId, updatedDog);
+  
+//       if(response) {
+//         res.status(200).send(response);
+//       } else {
+//         res.status(400).send('Horse is not found');
+//       } 
+//     } catch (error) {
+//         res.status(500).send(error)
+//       }
+//   });
 
 app.delete('/dogs/:id', async (req, res) => {
     try {
