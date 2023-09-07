@@ -54,17 +54,7 @@ function DogInfo() {
     useEffect(() => {
         axios.get(`http://localhost:3001/dogs/${id}`)
         .then(response => {
-            const dogData = response.data;
-            setDog(dogData);
-            setName(dogData.name);
-            setBreed(dogData.breed);
-            setColor(dogData.color);
-            setSex(dogData.sex);
-
-            const [year, month, day] = dogData.birthday.split("-");
-            setYear(year);
-            setMonth(month);
-            setDay(day);
+            setDog(response.data);
         })
         .catch(error => {
             console.error('oh no your dog got out and we can retrieve it', error);
@@ -116,6 +106,7 @@ function DogInfo() {
               <div className="form-item">
                 <input className="year-input" type="text" name="year" placeholder="YYYY" onChange={e => setYear(e.target.value)}/>
                 <select name="month" onChange={e => setMonth(e.target.value)}>
+                    <option valur=" ">MM</option>
                     <option value="01">Jan</option>
                     <option value="02">Feb</option>
                     <option value="03">Mar</option>
@@ -129,7 +120,8 @@ function DogInfo() {
                     <option value="11">Nov</option>
                     <option value="12">Dec</option>
                 </select>
-                <select name="day" required onChange={e => setDay(e.target.value)}>
+                <select name="day" onChange={e => setDay(e.target.value)}>
+                    <option value=" ">DD</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
