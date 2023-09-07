@@ -18,7 +18,15 @@ function DeleteSuccess() {
             <div className="main-content">
               <div className="inner-content"> 
             <h1 className="center">Dog Deleted</h1>
-                <p>You're dog was successfully deleted.</p>         
+                <p className="center">You're dog was successfully deleted.</p> <br/>
+              <div className="link-container">
+                <Link to="/register">
+                    <button className="link-btn center">Register A Dog</button>  
+                </Link>  
+                <Link to="/reg-dogs">
+                    <button className="link-btn center">View Registered Dogs</button>  
+                </Link>  
+                </div>
             </div>
             </div> 
             <footer>Here is a happy little footer</footer>
